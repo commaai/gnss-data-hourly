@@ -11,7 +11,7 @@ jobs:
       - name: install
         sudo apt-get install lftp
       - name: update
-        run: ./update.py
+        run: ./update.sh
       - name: push
         run: |
           git config --global user.name "github-actions"
