@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 YYYY=$(date -u +%Y)
 YY=$(date -u +%y)
