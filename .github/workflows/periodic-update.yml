@@ -1,0 +1,21 @@
+name: periodic-update
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '*/15 * * * *'
+jobs:
+  periodic-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install
+        sudo apt-get install lftp
+      - name: update
+        run: ./update.py
+      - name: push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email ""
+          git add .
+          git commit -m "periodic update"
+          git push
