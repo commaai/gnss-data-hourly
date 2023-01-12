@@ -11,7 +11,7 @@ RDOY="[0-9][0-9][0-9]"
 RYY="[0-9][0-9]"
 
 
-lftp -u anonymous,admin@comma.ai -e "set ftp:ssl-force true" -e "mirror --no-empty-dirs --no-perms --no-umask --parallel=4 --directory=/gnss/data/hourly/${YYYY}/${DOY}/ --directory=/gnss/data/hourly/${YYYP}/${DOYP}/ --include-glob=hour${RDOY}0.${RYY}g.gz --include-glob=hour${RDOY}0.${RYY}n.gz --target-directory=./;exit" gdc.cddis.eosdis.nasa.gov
+lftp -u anonymous,admin@comma.ai -e "set ftp:ssl-force true" -e "mirror --no-empty-dirs --no-perms --no-umask --parallel=4 --directory=/gnss/data/hourly/${YYYY}/${DOY}/ --directory=/gnss/data/hourly/${YYYP}/${DOYP}/ --include-glob=hour${RDOY}0.${RYY}[ng].gz --target-directory=./;exit" gdc.cddis.eosdis.nasa.gov
 
 
 # check year folders exist
