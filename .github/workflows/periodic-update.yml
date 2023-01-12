@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install
-        sudo apt-get install lftp
+        run: sudo apt-get install lftp
       - name: update
         run: ./update.sh
       - name: push
